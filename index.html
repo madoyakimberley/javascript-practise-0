@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tech News</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>TECH NEWS</h1>
+    </header>
+    <main class="body-content">
+      <h2 class="story-head">
+        Below Are stories trending in the tech industry
+      </h2>
+      <section class="stories">
+        <article id="blog-container">
+          <div class="blog">
+            <h2>AI news</h2>
+            <img src="images/AI.jpg" alt="AI connection" />
+            <button onclick="aiReadMore(showAiStory)">ReadMore</button>
+          </div>
+          <div class="blog">
+            <h2>Processor War</h2>
+            <img src="images/processor.jpg" alt="AMD Processors" />
+            <button onclick="processorMore(showProcessorStory)">
+              ReadMore
+            </button>
+          </div>
+          <div class="blog">
+            <h2>Redhat leading linux</h2>
+            <img src="images/linux.jpg" alt="Linux's Mascot" />
+            <button onclick="operatingSystem(showOsStory)">ReadMore</button>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <h1 class="footer-title">Contact Me</h1>
+      <a href="https://wa.me/2547000000">
+        <img src="images/wa.svg" alt="WhatsApp Icon" />
+      </a>
+
+      <a href="mailto:youremail@example.com">
+        <img src="images/email.svg" alt="email icon" />
+      </a>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
