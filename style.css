@@ -109,3 +109,12 @@ footer a img {
 footer a:hover {
   transform: scale(1.15);
 }
+#aiMore,
+#processorMore,
+#osMore {
+  display: none;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #cfd8ff;
+  line-height: 1.5;
+}

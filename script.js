@@ -1,4 +1,4 @@
-//Object giving the blog's Title, Description and Author
+//Array giving the blog's Title, Description and Author
 const blogPosts = [
   {
     title: "AI SAVES CHRISTMAS",
@@ -21,43 +21,61 @@ const blogPosts = [
 ];
 //functions assigning objects to specific classes in the html
 //Display AI blog
-const aiReadMore = (info) => {
-  const aiMore = blogPosts[0];
-  info(aiMore);
-};
-const showAiStory = (more) => {
-  alert(`Trending: ${more.title}
-                   ${more.description}
-              by:
-              ${more.author}`);
-};
-//Display Processor blog
-const processorMore = (info) => {
-  const processorMore = blogPosts[1];
-  info(processorMore);
-};
-const showProcessorStory = (more) => {
-  alert(`Trending: ${more.title}
-                    ${more.description}
-              by:
-              ${more.author}`);
-};
-//Display OS blog
-const operatingSystem = (info) => {
-  const osMore = blogPosts[2];
-  info(osMore);
-};
-const showOsStory = (more) => {
-  alert(`Trending: ${more.title}
-                    ${more.description}
-              by:
-              ${more.author}`);
-};
+const aiStorybtn = document.getElementById("showAiStory");
+const aiMore = document.getElementById("aiMore");
 
-// Prompt user after 5 seconds to enter name and position
-let timeout = 5 * 1000;
-setTimeout(() => {
-  const name = prompt("Enter Your Name");
-  const roll = prompt("Enter Your Tech Position");
-  alert(`${name} ,  ${roll} Welcome to Tech News`);
-}, timeout);
+aiStorybtn.addEventListener("click", showAiStory);
+
+function showAiStory(event) {
+  event.preventDefault();
+
+  let aiStory1 = blogPosts[0];
+
+  aiMore.innerHTML = `
+    <h3>${aiStory1.title}</h3>
+    <p>${aiStory1.description}</p>
+    <em>${aiStory1.author}</em>
+  `;
+  toggleStory(aiMore, this);
+}
+
+//DISPLAY PROCESSOR BLOG
+const showProcessorbtn = document.getElementById("showProcessorStory");
+const processorMore = document.getElementById("processorMore");
+
+showProcessorbtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  let processorStory1 = blogPosts[1];
+  processorMore.innerHTML = `<h3>${processorStory1.title}</h3>
+    <p>${processorStory1.description}</p>
+    <em>${processorStory1.author}</em>`;
+  toggleStory(processorMore, this);
+});
+
+//DISPLAY LINUX BLOG
+
+const showOsbtn = document.getElementById("showOsStory");
+const osMore = document.getElementById("osMore");
+
+showOsbtn.addEventListener("click", osMoreFn);
+function osMoreFn(event) {
+  event.preventDefault();
+  let osStory = blogPosts[2];
+  osMore.innerHTML = `
+  <h3>${osStory.title}</h3>
+    <p>${osStory.description}</p>
+    <em>${osStory.author}</em>
+  `;
+  toggleStory(osMore, this);
+}
+
+//Display One div at a time
+function toggleStory(contentDiv, button) {
+  if (contentDiv.style.display === "block") {
+    contentDiv.style.display = "none";
+    button.textContent = "ReadMore";
+  } else {
+    contentDiv.style.display = "block";
+    button.textContent = "ReadLess";
+  }
+}
